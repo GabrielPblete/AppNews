@@ -14,5 +14,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <p *ngFor="let article of articles">
+    {{article.title}}
+  </p>
 </ion-content>
