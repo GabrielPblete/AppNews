@@ -1,20 +1,21 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" mode="ios">
   
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      AIEP'S NEWS
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" mode="ios">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">AIEP'S NEWS</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <p *ngFor="let article of articles">
-    {{article.title}}
-  </p>
+  <app-articles [articles]="articles"></app-articles>
+  <ion-infinite-scroll threshold="25%" position="bottom" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
